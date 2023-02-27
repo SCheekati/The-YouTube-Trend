@@ -1,96 +1,123 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Retro Starter Page</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-		body {
-			background-color: #f3f3f3;
-			color: #333;
-			font-family: Arial, sans-serif;
-			font-size: 16px;
-			line-height: 1.5;
-			margin: 0;
-			padding: 0;
-		}
-
-		.container {
-			margin: 0 auto;
-			max-width: 960px;
-			padding: 20px;
-		}
-
-		h1, h2, h3 {
-			margin-top: 0;
-		}
-
-		h1 {
-			font-size: 36px;
-		}
-
-		h2 {
-			font-size: 24px;
-		}
-
-		h3 {
-			font-size: 18px;
-		}
-
-		p {
-			margin-bottom: 20px;
-		}
-
-		a {
-			color: #333;
-			text-decoration: none;
-		}
-
-		button {
-			background-color: #333;
-			border: none;
-			color: #fff;
-			cursor: pointer;
-			padding: 10px 20px;
-		}
-
-		button:hover {
-			background-color: #555;
-		}
-	</style>
+	<title>The YouTube Trend</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
-	<div class="container">
-		<header>
-			<h1>Welcome to Retro Starter Page</h1>
+	<header>
+		<div class="header-container">
+			<h1>The YouTube Trend</h1>
+            <br>
 			<nav>
 				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Services</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a href="#introduction">Introduction</a></li>
+					<li><a href="#problem-statement">Problem Statement</a></li>
+					<li><a href="#methods">Methods</a></li>
+					<li><a href="#potential-results">Potential Results &amp; Discussion</a></li>
+                    <li><a href="#references">References</a></li>
+                    <li><a href="#misc">Miscellaneous - Contribution &amp; Links</a></li>
 				</ul>
 			</nav>
-		</header>
+		</div>
+	</header>
+	<main>
+		<div class="section-container">
+			<section id="introduction">
+				<h2>Introduction</h2>
+				<p>YouTube is the world's largest video sharing platform available for creators and businesses to host their content. The trending page is notable for boosting viewership and putting videos in the spotlight for people to like, share, comment, and subscribe to the respective channels. </p> 
+                <p>Trending YouTube Video Statistics Kaggle dataset provides months of top trending videos from 10 countries. Up to 200 trending videos per day are provided in the dataset. Features include video title, video id, channel title, publish time, tags, views, likes, dislikes, description, comment count, trending date, thumbnail link, comments disabled, ratings disabled, and video error or removal.  </p>
+			</section>
+			<section id="problem-statement">
+				<h2>Problem Statement</h2>
+				<p>Content creators on YouTube work to create a trending video in hopes of increasing exposure and earning revenue. YouTube claims that viral videos are based on view count, how fast the views are coming from, where they are coming from etc., but the inner workings of the YouTube Algorithm are known to be unclear and ambiguous.  </p>
+                <p>In this project, we’ll use a one-class classification (OCC) approach to predict possible trending videos on YouTube. We’ll use trending videos’ statistics as features to train five different machine learning models, compare each model and create an ensemble method overall. </p>
+			</section>
+			<section id="methods">
+				<h2>Methods</h2>
+				<p>Dataset preparation: Trending YouTube Video Statistics Kaggle dataset will be our main dataset for the training phase. On the other hand, we’ll also collect non-trending videos in the same timeframe for testing purposes. This step also includes dataset cleaning and potential feature pruning according to different ML models that we use. </p>
+                <p>
+                    Model training: Each student will implement and train at least one ML model on our task. We’ll study and compare each model in depth, and at the end create an ensemble model by merging all models. In summary, we will try 
+                    <br> a. One-class SVM [1] or One-class random forests [2] 
+                    <br> b. One-class CNN trained on video thumbnails [3] 
+                    <br> c. Textual one-class NN on video descriptions/ title [4] 
+                    <br> d. One-class autoencoder [5] 
+                    <br>e. Supervised binary classification with SVM or NN. 
+                </p>
+                <p>
+                    Evaluation: A set of raw trending and non-trending video statistics will be used to evaluate the performance of each model. We’ll build a confusion matrix for each model and analyze the effectiveness of features. 
+                </p>
+			</section>
+			<section id="potential-results">
+				<h2>Potential Results &amp; Discussion</h2>
+				<p>With our model, we will attempt to perform cross validation for all binary classifiers included. Binary classifiers with hyperparameters that adjust sensitivity can be judged by the area under their ROC curves. Otherwise, precision, recall and F1 score are well-defined and can be used for model evaluation. </p>
+                <p>
+                    We will compare the results of one-class classifiers against the results of traditional binary classifiers. The latter, as stated before, will have access to the negative-labeled data, which the former will not. Similar results would suggest that one-class classifiers are working as intended. 
+                </p>
+			</section>
+            <section id="references">
+				<h2>References</h2>
+				<p>                Dzhanova, Yelena. “Forget Law School, These Kids Want to Be a YouTube Star.” CNBC, CNBC, 3 Aug. 2019, https://www.cnbc.com/2019/08/02/forget-law-school-these-kids-want-to-be-a-youtube-star.html. ​
+                </p>
+                <p>
+                    Azami, Zahid Nur Al. “YouTube Trending Videos Data Analysis.” Medium, CodeX, 28 Mar. 2021, https://medium.com/codex/youtube-trending-videos-data-analysis-a340b4a039f9. ​
+                </p>
+                <p>
+                    “Trending on YouTube - YouTube Help.” Google, Google, https://support.google.com/youtube/answer/7239739?hl=en-IN. ​
+                </p>
+                <p>
+                    Seliya, Naeem, et al. “A Literature Review on One-Class Classification and Its Potential Applications in Big Data - Journal of Big Data.” SpringerOpen, Springer International Publishing, 10 Sept. 2021, https://journalofbigdata.springeropen.com/articles/10.1186/s40537-021-00514-x%E2%80%8B. ​ ​   </p>
+                    <p>
+                        Ruff, Lukas, et al. “Deep One-Class Classification.” PMLR, PMLR, 3 July 2018, https://proceedings.mlr.press/v80/ruff18a.html. ​
+                        ​   </p>
+                <p>
+                    Khan, Shehroz S., and Michael G. Madden. “One-Class Classification: Taxonomy of Study and Review of Techniques: The Knowledge Engineering Review.” Cambridge Core, Cambridge University Press, 24 Jan. 2014, https://www.cambridge.org/core/journals/knowledge-engineering-review/article/oneclass-classification-taxonomy-of-study-and-review-of-techniques/EEDBC97CFD54B2B65BEB5FCD71593782. 
 
-		<main>
-			<h2>What We Offer</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id gravida ex. Donec sagittis fringilla dui in eleifend. Nam efficitur orci non mauris blandit, at ultrices lectus bibendum.</p>
+                </p>
 
-			<h3>Our Services</h3>
-			<ul>
-				<li>Service 1</li>
-				<li>Service 2</li>
-				<li>Service 3</li>
-				<li>Service 4</li>
-			</ul>
+                <p>
+                    [1] Schölkopf, Bernhard, et al. "Support vector method for novelty detection." Advances in neural information processing systems 12 (1999).​
+                </p>
 
-			<button>Learn More</button>
-		</main>
+                <p>
+                    [2] Désir, Chesner, et al. "One class random forests." Pattern Recognition 46.12 (2013): 3490-3506.​
+                </p>
 
-		<footer>
-			<p>&copy; 2023 Retro Starter Page. All rights reserved.</p>
-		</footer>
-	</div>
+                <p>
+                    [3] Ruff, Lukas, et al. "Deep one-class classification." International conference on machine learning. PMLR, 2018.​
+                </p>
+                <p>
+                    [4] Manevitz, Larry, and Malik Yousef. "One-class document classification via neural networks." Neurocomputing 70.7-9 (2007): 1466-1481.​
+                </p>
+                <p>
+                    [5] Fontenla‐Romero, Oscar, Beatriz Pérez‐Sánchez, and Bertha Guijarro‐Berdiñas. "DSVD‐autoencoder: a scalable distributed privacy‐preserving method for one‐class classification." International Journal of Intelligent Systems 36.1 (2021): 177-199.​
+                </p>
+
+			</section>
+            <section id="misc">
+				<h2>Miscellaneous - Contribution &amp; Links</h2>
+				<p>Datasets:</p>
+                <p>
+                    <a href="https://www.kaggle.com/datasnaek/youtube-new">Trending YouTube Video Statistics</a>
+                </p>
+                <p>
+                    <a href="https://www.kaggle.com/datasets/advaypatil/youtube-statistics">Non-trending YouTube Video Statistics</a>
+                
+                </p>
+
+                <p> Gantt chart and contribution:</p>
+                <p>
+                    https://gtvault-my.sharepoint.com/:x:/g/personal/scheekati6_gatech_edu/ERfH9NzTvuFGkYxok3T_RdEBF2gpDDYBTjMT9C2OdKL-Pw?e=m6DdKN&nav=MTVfezAwMDAwMDAwLTAwMDEtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMH0
+                </p>
+                
+			</section>
+		</div>
+	</main>
+    <footer>
+        <div class="footer-container">
+          <p>&copy; 2023 ML 7641 Team 14</p>
+        </div>
+      </footer>
+      
 </body>
 </html>

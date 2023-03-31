@@ -16,3 +16,5 @@ In the last step, we download number of channel subscribers with `src/add_channe
 ## Dataset Features
 There are 4324 examples in train set and 1082 examples in validation set. There are 2703 trending video examples and 2703 non-trending video examples.
 
+# Dataset Visualization
+![alt text](https://github.com/SCheekati/ML-7641-Team14/blob/main/dataset/pca.png?raw=true)

@@ -5,7 +5,7 @@ import torchvision
 import torchvision.transforms as transforms
 
 
-class ConvNeuralNet(nn.Module):
+class ZFnet(nn.Module):
 
     def __init__(self):
         super().__init__()
@@ -36,4 +36,5 @@ class ConvNeuralNet(nn.Module):
         x = F.relu(self.drop(self.fc7(x)))
         x = self.fc8(x)
         return 
-        
+
+  

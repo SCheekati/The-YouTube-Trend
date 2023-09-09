@@ -2,5 +2,4 @@ YouTube is the world's largest video sharing platform available for creators and
 
 In this project, we aim to build models that can predict whether a video will become a trending video on YouTube. This will allow us to better understand the factors that YouTube considers when deciding which videos to feature on the trending page.
 
-Report of the trending youtube videos
-](https://scheekati.github.io/The-YouTube-Trend/)https://scheekati.github.io/The-YouTube-Trend/
+[Report of the trending youtube videos](https://scheekati.github.io/The-YouTube-Trend/)https://scheekati.github.io/The-YouTube-Trend/
